@@ -1,0 +1,14 @@
+! version = 2.0
+
+// basic usage: if/else
++ 내 이름이 뭐라고
+* <get name> == undefined => 알려준적 없잖아
+* <get name>라고 하지 않았어?
+
+// <formal> is shortcut for {formal}<star>{/formal}
++ 나는 *야
+* <get name> == undefined => <set name=<formal>>만나서 반가워
+
++ 내가 *라고 말했었나
+* <get name> != undefined => 어, 500년 전에, <get name>라고 말했어
+* 아니 말안했어.<set name=<formal>>

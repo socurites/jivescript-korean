@@ -1,0 +1,7 @@
+! version = 2.0
+
+// basic: 아래는 사용하지 않는 것과 같음.
+> begin
+  + request
+  - {ok}
+< begin

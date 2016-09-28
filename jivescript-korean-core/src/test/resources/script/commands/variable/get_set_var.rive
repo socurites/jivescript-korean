@@ -1,0 +1,13 @@
+! version = 2.0
+
++ 내 이름은 *야
+- <set name=<star>>만나서 반가워, <get name>
+
++ 내 이름이 뭐라고
+- <get name>라며! 바보같으니라구.
+
+//using {formal} tag
+// request 메시지는 noramize된다.
+// {formal} 태그를 사용하여 normalize되지 않은 입력값을 저장
++ 나는 *야
+- <set name={formal}<star>{/formal}>만나서 반가워, <get name>

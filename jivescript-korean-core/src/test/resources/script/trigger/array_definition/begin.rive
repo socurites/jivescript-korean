@@ -1,0 +1,13 @@
+! version = 2.0
+
+// array definitions
+! array		moodadv		= 정말 매우 몹시
+
+// 아이템에 공백이 있다면, |를 구분자로 쓴다
+! array		phone		= 전화번호|휴대폰번호|사무실 전화번호
+
+! array		moodadj		= 좋아 싫어
+
+// multi line array definition
+! array		moodnoun	= 기분이
+^ 느낌이

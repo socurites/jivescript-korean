@@ -1,0 +1,9 @@
+! version = 2.0
+
+// number
++ 나는 #살이야
+- <star>라면 인생을 즐기기 좋은 나이지
+
+// only character, no number, no space
++ 나는 _살이야
+- <star>라면 인생을 즐기기 좋은 나이지

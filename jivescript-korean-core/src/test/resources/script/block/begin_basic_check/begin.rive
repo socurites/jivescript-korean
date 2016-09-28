@@ -1,0 +1,31 @@
+! version = 2.0
+
+> begin
+
+  // If we don't know their name, set the new_user topic and continue.
+  + request
+  * <get name> == undefined => {topic=new_user}{ok}
+  - {ok}
+
+< begin
+
+> topic new_user
+
+  + *
+  - Hi! I'm <bot name>! I'm a chatbot written in RiveScript.\s
+  ^ What is your name?{topic=asked_name}
+
+< topic
+
+> topic asked_name
+
+  + #
+  - Your name is a number?
+
+  + *
+  - I only want your first name.
+
+  + _
+  - <set name=<formal>>Nice to meet you, <get name>!{topic=random}
+
+< topic

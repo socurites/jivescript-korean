@@ -1,0 +1,14 @@
+! version = 2.0
+
+// 이것은 주석입니다.
+/* 이것은 긴
+   주석입니다
+*/
+
+// Bot variables
+! var name = 마이봇
+! var age  = 36
+
+// Substitutions
+! sub exo     = 엑소
+! sub bigbang = 빅뱅

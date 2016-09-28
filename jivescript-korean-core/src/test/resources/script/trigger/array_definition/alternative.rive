@@ -1,0 +1,13 @@
+! version = 2.0
+
+// basic alternatives
++ (@phone)가 뭐야
+- 여기로 전화해 줄래? 010-1111-2345
+
+// using <star>
++ 나 지금 (@moodadv) 피곤해
+- 네가 <star> 피곤하다니 정말 안됬다
+
+// using star wild card together
++ 나는 * 너무 (@moodadj)
+- 놀라운 걸! 나도 <star1> 너무 <star2>

@@ -1,0 +1,9 @@
+! version = 2.0
+
+// using substitutions
+// substitution은 trigger에만 적용되며
+// response는 substitution이 적용되지 않음
+// 형태소 분석기를 쓰는 편이 낫다
+// 형태소 분석기를 사용한 trigger 매칭 부분을 참조
++ 난 엑소가 좋아 넌
+- 난 bigbang이 좋아

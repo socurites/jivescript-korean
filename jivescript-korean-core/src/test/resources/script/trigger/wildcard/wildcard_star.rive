@@ -1,0 +1,13 @@
+! version = 2.0
+
+// basic usage
++ 내 이름은 *야
+- <star1>, 만나서 반가워
+
+// multi wilidcards
++ 내 취미는 * *야
+- 네 취미가 <star1>, <star2>라고?
+
+// single wildcard
++ 내 취미는 *야
+- 네 취미가 <star>라고?

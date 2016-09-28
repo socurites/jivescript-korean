@@ -1,0 +1,10 @@
+! version = 2.0
+
+// Tell the parser to join continuation lines with line breaks
+! local concat = newline
+
++ 멋진 노래 가사 좀 알려줄래 newline
+- 봄바람 휘날리며
+^ 흩날리는 벚꽃 잎이 
+^ 울려 퍼질 이 거리를
+^ 우우 둘이 걸어요.

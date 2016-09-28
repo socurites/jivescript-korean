@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.socurites</groupId>
+	<artifactId>jivescript-korean</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>jivescript-korean-core</module>
+		<module>jivescript-korean-ext</module>
+	</modules>
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<korean-text-version>4.4</korean-text-version>
+		<json.version>20160212</json.version>
+		<log4j.version>1.2.17</log4j.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-lang3.version>3.0</commons-lang3.version>
+		<junit.version>4.11</junit.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- JSON -->
+			<!-- https://mvnrepository.com/artifact/org.json/json -->
+			<dependency>
+				<groupId>org.json</groupId>
+				<artifactId>json</artifactId>
+				<version>${json.version}</version>
+			</dependency>
+
+			<!-- commons -->
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+
+			<!-- default korean analyzer -->
+			<dependency>
+				<groupId>com.twitter.penguin</groupId>
+				<artifactId>korean-text</artifactId>
+				<version>${korean-text-version}</version>
+			</dependency>
+
+			<!-- logging -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<!-- // logging -->
+
+
+			<!-- testing -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

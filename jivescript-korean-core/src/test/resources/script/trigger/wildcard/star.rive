@@ -1,0 +1,5 @@
+! version = 2.0
+
+// catch all trigger when other matching failed
++ *
+- 무슨 말인지 모르겠어

@@ -1,0 +1,12 @@
+! version = 2.0
+
++ 안녕
+- 반가워
+
+// basic usage
++ 안녕하세요
+@ 안녕
+
+// use redirect inside of reply
++ * 나는 *야
+- <star2>, {@ <star1>}

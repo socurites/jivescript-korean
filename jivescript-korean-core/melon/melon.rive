@@ -1,0 +1,180 @@
+! version = 2.0
+
+// local parser option: effects on only this file.
+// Tell the parser to join continuation lines with line breaks
+! local concat = newline
+
+// Now change the concat mode to spaces
+! local concat = space
+
+// Go back to the default concatenation mode (which doesn't insert ANY
+// character when joining lines)
+! local concat = none
+
+// random replies
++ how are you
+- I'm great, how are you?
+- I'm good, you?
+- Good :) you?
+- Great! You?
+- I'm fine, thanks for asking!
+
+// random words
++ how do you do
+- I'm {random}good|great{/random}
+
+// respond weight
+// The weight value controls the probability that the reply is chosen
++ greetings
+- Hi there!{weight=20}
+- Hello!{weight=25}
+- Yos kyoco duckeb!
+
+// line continuation
++ tell me a poem
+- Little Miss Muffit sat on her tuffet,\n
+^ In a nonchalant sort of way.\n
+^ With her forcefield around her,\n
+^ The Spider, the bounder,\n
+^ Is not in the picture today.
+
+// line continuation
+// This one will have a space.
++ what are you
+- I am an artificial intelligence programmed\s
+^ using RiveScript.
+
+// wildcards
+// # symbol is a wildcard that will only match a number.
+// _ symbol is one that will only match a word with no numbers or spaces in it
++ my name is *
+- Nice to meet you, <star1>!
+
++ * told me to say *
+- Why would <star1> tell you to say "<star2>"?
+- Did you say "<star2>" after <star1> told you to?
+F
++ i am * years old
+- A lot of people are <star1> years old.
+
+// Alternatives and Optionals
+// alternatives
++ what is your (home|office|cell) number
+- You can reach me at: 1 (800) 555-1234.
+
++ i am (really|very|super) tired
+- I'm sorry to hear that you are <star> tired.
+
++ i (like|love) the color *
+- What a coincidence! I <star1> that color too!
+- I also have a soft spot for the color <star2>!
+- Really? I <star1> the color <star2> too!
+- Oh I <star1> <star2> too!
+
+// options
+// Optionals are like alternatives, but they don't need to be present in the user's message at all
++ how [are] you
+- I'm great, you?
+
++ what is your (home|office|cell) [phone] number
+- You can reach me at: 1 (800) 555-1234.
+
++ i have a [red|green|blue] car
+- I bet you like your car a lot.
+
+// keyword triggers: A clever thing you can do with optionals is write "keyword" triggers
+// if the user says a magic word ANYWHERE in their message, your trigger will match!
++ [*] the machine [*]
+- How do you know about the machine!?
+
+// arrays variables
+// separate the array items with spaces (useful for single words) 
+// or pipe symbols (for phrases). 
+! array colors = red blue green yellow
+
++ what color is my (@colors) *
+- Your <star2> is <star1>, silly!
+- Do I look dumb to you? It's <star1>!
+
++ i am wearing a (@colors) shirt *
+- Do you really like <star1>?
+
+// weight for trigger
++ google *{weight=10}
+- Google search: <a href="http://google.com/search?q=<star>">Click Here</a>
+
++ * perl script
+- You need Perl to run a Perl script.
+
+// redirection
++ hello
+- Hi there!
+- Hey!
+- Howdy!
+
++ hey
+@ hello
+
++ hi
+@ hello
+
++ hello *
+- {@ hello} <@>
+
++ hello
+- Hi there!
+
++ are you a bot
+- How did you know I'm a machine?
+
+// shor discussions: %(previous)
+// not working
++ knock knock
+- Who's there?
+
++ *
+% who is there
+- <star> who?
+
++ *
+% * who
+- LOL! <star>! That's funny!
+
++ i have a dog
+- What color is it?
+
++ (@colors)
+% what color is it
+- That's a silly color for a dog!
+
+// variables getter/setter
+// + my name is *
+// - <set name=<star>>It's nice to meet you, <get name>.
+
+// tags: Store the name with the correct casing
++ my name is *
+- <set name={formal}<star>{/formal}>Nice to meet you, <get name>!
+
++ i am # years old
+- <set age=<star>>I will remember that you are <get age> years old.
+
++ how old am i
+- You are <get age> years old.
+
+// conditional
+// + what is my name
+// - Your name is <get name>, silly!
++ what is my name
+* <get name> == undefined => You never told me your name.
+- Your name is <get name>, silly!
+- Aren't you <get name>?
+
++ what am i old enough to do
+* <get age> == undefined => I don't know how old you are.
+* <get age> >  25 => You can do anything you want.
+* <get age> == 25 => You're old enough to rent a car with no extra fees.
+* <get age> >  21 => You're old enough to drink, but not rent a car.
+* <get age> == 21 => You're exactly old enough to drink.
+* <get age> >  18 => You're old enough to gamble, but not drink.
+* <get age> == 18 => You're exactly old enough to gamble.
+- You're not old enough to do much of anything yet.

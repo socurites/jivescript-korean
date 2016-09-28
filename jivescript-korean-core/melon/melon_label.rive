@@ -1,0 +1,17 @@
+! version = 2.0
+
++ i hate you
+- You're really mean! I'm not talking again until you apologize.{topic=sorry}
+
+> topic sorry
+
+  // This will match if the word "sorry" exists ANYWHERE in their message
+  + [*] sorry [*]
+  - It's OK, I'll forgive you!{topic=random}
+
+  + *
+  - Nope, not until you apologize.
+  - Say you're sorry!
+  - Apologize!
+
+< topic

@@ -1,0 +1,8 @@
+! version = 2.0
+
++ 봇 안녕
+- 인간, 방가!
+
+// notes on trigger: a trigger is ALWAYS lower cased, and it doesn't contain punctuation symbols
+// 트리거를 정의할 때는 특수문자를 제외해야 한다.
+// 위와 같이 정의한 경우에도, 사용자가 "봇 안녕!"이라고 입력한 경우, 실제로 JiveScriptBot은 입력문자열을 정규화하여 "봇 안녕"이라고 변환 후 trigger와 매칭을 수행한다.

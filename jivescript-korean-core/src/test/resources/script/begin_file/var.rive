@@ -1,0 +1,9 @@
+! version = 2.0
+
+// using bot variables
++ 너 이름이 뭐니
+- <bot name>이라고 불러줘
+
++ 너 몇살이야
+- 난 <bot age>살이야 
+ 
