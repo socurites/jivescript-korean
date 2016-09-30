@@ -38,7 +38,11 @@ public class JiveScriptExtReplyBuilder extends JiveScriptReplyBuilder {
 			for ( String domainToken : domainTokens ) {
 				String[] keyVal = StringUtils.split(domainToken, "=");
 				
-				this.domainEntity.addProp(keyVal[0], keyVal[1]);
+				if ( keyVal.length >= 2) {
+					this.domainEntity.addProp(keyVal[0], keyVal[1]);
+				} else {
+					this.domainEntity.addProp(keyVal[0], null);
+				}
 			}
 		}
 		

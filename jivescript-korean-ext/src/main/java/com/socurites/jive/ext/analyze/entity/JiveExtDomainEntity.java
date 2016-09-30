@@ -20,6 +20,14 @@ public class JiveExtDomainEntity {
 		}
 	}
 	
+	public boolean hasProp(String key) {
+		if ( this.props.containsKey(key) ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
